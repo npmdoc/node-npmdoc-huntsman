@@ -1,0 +1,790 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/missinglink/huntsman#readme"
+
+    >huntsman (v0.3.0)</a>
+</h1>
+<h4>Super configurable async web spider</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.huntsman">module huntsman</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue">
+            function <span class="apidocSignatureSpan">huntsman.</span>Queue
+            <span class="apidocSignatureSpan">( isUnique )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.extension">
+            function <span class="apidocSignatureSpan">huntsman.</span>extension
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.proxy">
+            function <span class="apidocSignatureSpan">huntsman.</span>proxy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.spider">
+            function <span class="apidocSignatureSpan">huntsman.</span>spider
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.storage">
+            function <span class="apidocSignatureSpan">huntsman.</span>storage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">huntsman.</span>Queue.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">huntsman.</span>link</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.huntsman.Queue">module huntsman.Queue</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.Queue">
+            function <span class="apidocSignatureSpan">huntsman.</span>Queue
+            <span class="apidocSignatureSpan">( isUnique )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.huntsman.Queue.prototype">module huntsman.Queue.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.prototype.add">
+            function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>add
+            <span class="apidocSignatureSpan">( key )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.prototype.count">
+            function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>count
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.prototype.has">
+            function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>has
+            <span class="apidocSignatureSpan">( key )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.prototype.pop">
+            function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>pop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.prototype.remove">
+            function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>remove
+            <span class="apidocSignatureSpan">( key )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.prototype.shift">
+            function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>shift
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.huntsman.link">module huntsman.link</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.link.extractor">
+            function <span class="apidocSignatureSpan">huntsman.link.</span>extractor
+            <span class="apidocSignatureSpan">( uri, body, options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.link.normaliser">
+            function <span class="apidocSignatureSpan">huntsman.link.</span>normaliser
+            <span class="apidocSignatureSpan">( uri )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.link.resolver">
+            function <span class="apidocSignatureSpan">huntsman.link.</span>resolver
+            <span class="apidocSignatureSpan">( uri, baseUri )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.huntsman" id="apidoc.module.huntsman">module huntsman</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue" id="apidoc.element.huntsman.Queue">
+        function <span class="apidocSignatureSpan">huntsman.</span>Queue
+        <span class="apidocSignatureSpan">( isUnique )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue( isUnique ){
+  this.data = [];
+  this.complete = [];
+  this.isUnique = ( &#x27;boolean&#x27; === typeof isUnique ) ? isUnique : true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.extension" id="apidoc.element.huntsman.extension">
+        function <span class="apidocSignatureSpan">huntsman.</span>extension
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extension = function (){
+  var args = Array.prototype.slice.call( arguments, 0 );
+  var module = require( &#x27;./lib/&#x27; + mod + &#x27;/&#x27; + args.shift() );
+  return module.apply( module, args );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+/** Crawl wikipedia and use jquery syntax to extract information from the page **/
+
+var huntsman = require(&#x27;huntsman&#x27;);
+var spider = huntsman.spider();
+
+spider.extensions = [
+huntsman.<span class="apidocCodeKeywordSpan">extension</span>( &#x27;recurse&#x27; ), // load recurse extension &#x26; follow anchor
+ links
+huntsman.extension( &#x27;cheerio&#x27; ) // load cheerio extension
+];
+
+// follow pages which match this uri regex
+spider.on( /http:\/\/en\.wikipedia\.org\/wiki\/\w+:\w+$/, function ( err, res ){
+
+// use jquery-style selectors &#x26; functions
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.proxy" id="apidoc.element.huntsman.proxy">
+        function <span class="apidocSignatureSpan">huntsman.</span>proxy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">proxy = function (){
+  var args = Array.prototype.slice.call( arguments, 0 );
+  var module = require( &#x27;./lib/&#x27; + mod + &#x27;/&#x27; + args.shift() );
+  return module.apply( module, args );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+});
+
+huntsman.next = function( isSeed ){
+  var uri = huntsman.queue.shift();
+  if( &#x27;string&#x27; === typeof( uri ) ){
+    if( true === isSeed || huntsman.match( uri ) ){
+      huntsman.<span class="apidocCodeKeywordSpan">proxy</span>( uri, function( err, res ){
+        huntsman.emit( &#x27;HUNTSMAN_RESPONSE&#x27;, err, res );
+      });
+    }
+    else console.log( &#x27;[skip] uri cannot be matched to callback&#x27;, uri );
+  } else if (( new Date().getTime() - huntsman.options.timeout ) &#x3e; huntsman.updated ){
+    huntsman.stop();
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.spider" id="apidoc.element.huntsman.spider">
+        function <span class="apidocSignatureSpan">huntsman.</span>spider
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spider = function ( options ){
+
+  var huntsman = new EventEmitter();
+
+  // Allow undefined callbacks
+  // @todo add unit test for this
+  huntsman.on = function( event, cb ){
+    EventEmitter.prototype.on.call( this, event, cb || function(){} );
+  }
+
+  huntsman.options = options || {};
+  huntsman.options.throttle = huntsman.options.throttle || 10;
+  huntsman.options.timeout = huntsman.options.timeout || 5000;
+  huntsman.proxy = huntsman.options.proxy || new (require(&#x27;./proxy/http&#x27;))();
+  huntsman.queue = huntsman.options.queue || new (require(&#x27;./Queue&#x27;))();
+  huntsman.extensions = [];
+  huntsman.loop = function(){};
+  huntsman.updated = new Date().getTime() + huntsman.options.timeout;
+
+  // Extensions
+  huntsman.on( &#x27;HUNTSMAN_RESPONSE&#x27;, function( err, res ){
+    if( err ) huntsman.emit( &#x27;HUNTSMAN_ERROR&#x27;, &#x27;response error&#x27; + err.toString(&#x27;utf8&#x27;) );
+    huntsman.updated = new Date().getTime();
+    async.parallel( huntsman.extensions.map( function( extension ){
+      return async.apply( extension, huntsman, err, res );
+    }), function( err, results ){
+      if( err ) huntsman.emit( &#x27;HUNTSMAN_ERROR&#x27;, &#x27;extension error&#x27; + err.toString(&#x27;utf8&#x27;) );
+      res.extension = {};
+      if( Array.isArray( results ) ){
+        results.forEach( function( result ){
+          for( var key in result ){ res.extension[ key ] = result[ key ]; }
+        });
+      }
+      huntsman.emit.call( huntsman, res.uri, err, res );
+    });
+  });
+
+  huntsman.next = function( isSeed ){
+    var uri = huntsman.queue.shift();
+    if( &#x27;string&#x27; === typeof( uri ) ){
+      if( true === isSeed || huntsman.match( uri ) ){
+        huntsman.proxy( uri, function( err, res ){
+          huntsman.emit( &#x27;HUNTSMAN_RESPONSE&#x27;, err, res );
+        });
+      }
+      else console.log( &#x27;[skip] uri cannot be matched to callback&#x27;, uri );
+    } else if (( new Date().getTime() - huntsman.options.timeout ) &#x3e; huntsman.updated ){
+      huntsman.stop();
+    }
+  };
+
+  huntsman.wait = function( waitms ){
+    huntsman.stop();
+    setTimeout( huntsman.start, waitms );
+    console.error( &#x27;waiting: &#x27; + waitms + &#x27; ms&#x27; );
+  };
+
+  huntsman.stop = function(){
+    console.error( &#x27;spider stop&#x27; );
+    clearInterval( huntsman.loop );
+    huntsman.emit( &#x27;HUNTSMAN_EXIT&#x27; );
+  };
+
+  huntsman.start = function(){
+    if( huntsman.queue.count() === 0 ) return console.error( &#x27;no uri in queue&#x27; );
+    huntsman.loop = setInterval( huntsman.next, 1000 / huntsman.options.throttle );
+    huntsman.next( true );
+  };
+
+  return huntsman;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Example Script
+
+```javascript
+/** Crawl wikipedia and use jquery syntax to extract information from the page **/
+
+var huntsman = require(&#x27;huntsman&#x27;);
+var spider = huntsman.<span class="apidocCodeKeywordSpan">spider</span>();
+
+spider.extensions = [
+  huntsman.extension( &#x27;recurse&#x27; ), // load recurse extension &#x26; follow anchor links
+  huntsman.extension( &#x27;cheerio&#x27; ) // load cheerio extension
+];
+
+// follow pages which match this uri regex
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.storage" id="apidoc.element.huntsman.storage">
+        function <span class="apidocSignatureSpan">huntsman.</span>storage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">storage = function (){
+  var args = Array.prototype.slice.call( arguments, 0 );
+  var module = require( &#x27;./lib/&#x27; + mod + &#x27;/&#x27; + args.shift() );
+  return module.apply( module, args );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.huntsman.Queue" id="apidoc.module.huntsman.Queue">module huntsman.Queue</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue.Queue" id="apidoc.element.huntsman.Queue.Queue">
+        function <span class="apidocSignatureSpan">huntsman.</span>Queue
+        <span class="apidocSignatureSpan">( isUnique )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Queue( isUnique ){
+  this.data = [];
+  this.complete = [];
+  this.isUnique = ( &#x27;boolean&#x27; === typeof isUnique ) ? isUnique : true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.huntsman.Queue.prototype" id="apidoc.module.huntsman.Queue.prototype">module huntsman.Queue.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue.prototype.add" id="apidoc.element.huntsman.Queue.prototype.add">
+        function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>add
+        <span class="apidocSignatureSpan">( key )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function ( key ){
+  if( !this.isUnique || ( -1 === this.complete.indexOf( key ) &#x26;&#x26; !this.has( key ) ) ){
+    this.data.push( key );
+    return true;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    body: $(&#x27;div#mw-content-text p&#x27;).text().trim()
+  };
+
+  console.log( wikipedia );
+
+});
+
+spider.queue.<span class="apidocCodeKeywordSpan">add</span>( &#x27;http://en.wikipedia.org/wiki/Huntsman_spider&#x27; );
+spider.start();
+```
+
+### Example Output
+
+```bash
+peter@edgy:/tmp$ node examples/html.js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue.prototype.count" id="apidoc.element.huntsman.Queue.prototype.count">
+        function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>count
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (){
+  return this.data.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  huntsman.stop = function(){
+    console.error( &#x27;spider stop&#x27; );
+    clearInterval( huntsman.loop );
+    huntsman.emit( &#x27;HUNTSMAN_EXIT&#x27; );
+  };
+
+  huntsman.start = function(){
+    if( huntsman.queue.<span class="apidocCodeKeywordSpan">count</span>() === 0 ) return console.error( &#x27;no uri in queue&#x27
+; );
+    huntsman.loop = setInterval( huntsman.next, 1000 / huntsman.options.throttle );
+    huntsman.next( true );
+  };
+
+  return huntsman;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue.prototype.has" id="apidoc.element.huntsman.Queue.prototype.has">
+        function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>has
+        <span class="apidocSignatureSpan">( key )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">has = function ( key ){
+  return( 0 &#x3c;= this.data.indexOf( key ) );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+Queue.prototype.count = function(){
+  return this.data.length;
+};
+
+Queue.prototype.add = function( key ){
+  if( !this.isUnique || ( -1 === this.complete.indexOf( key ) &#x26;&#x26; !this.<span class="apidocCodeKeywordSpan">has</span>(
+key ) ) ){
+    this.data.push( key );
+    return true;
+  }
+  return false;
+};
+
+Queue.prototype.remove = function( key ){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue.prototype.pop" id="apidoc.element.huntsman.Queue.prototype.pop">
+        function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>pop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pop = function (){
+  val = this.data.pop();
+  if( val ) this.complete.push( val );
+  return val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Queue.prototype.shift = function(){
+  val = this.data.shift();
+  if( val ) this.complete.push( val );
+  return val;
+};
+
+Queue.prototype.pop = function(){
+  val = this.data.<span class="apidocCodeKeywordSpan">pop</span>();
+  if( val ) this.complete.push( val );
+  return val;
+};
+
+module.exports = Queue;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue.prototype.remove" id="apidoc.element.huntsman.Queue.prototype.remove">
+        function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>remove
+        <span class="apidocSignatureSpan">( key )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function ( key ){
+  if( this.isUnique ){
+    this.data = this.data.filter( function( elem ){
+      return( elem !== key );
+    });
+  }
+  else {
+    var i = this.data.indexOf( key );
+    if( i &#x3e; -1 ){
+      this.data.splice( i, 1 );
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.Queue.prototype.shift" id="apidoc.element.huntsman.Queue.prototype.shift">
+        function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>shift
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shift = function (){
+  val = this.data.shift();
+  if( val ) this.complete.push( val );
+  return val;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+function loadModule( mod ){
+return function(){
+  var args = Array.prototype.slice.call( arguments, 0 );
+  var module = require( &#x27;./lib/&#x27; + mod + &#x27;/&#x27; + args.<span class="apidocCodeKeywordSpan">shift</span>() );
+  return module.apply( module, args );
+};
+}
+
+module.exports = {
+spider: require( &#x27;./lib/huntsman&#x27; ),
+proxy: loadModule( &#x27;proxy&#x27; ),
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.huntsman.link" id="apidoc.module.huntsman.link">module huntsman.link</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.link.extractor" id="apidoc.element.huntsman.link.extractor">
+        function <span class="apidocSignatureSpan">huntsman.link.</span>extractor
+        <span class="apidocSignatureSpan">( uri, body, options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractor = function ( uri, body, options ) {
+
+  var links = [];
+
+  // accept a list of regex patterns to match &#x26; allow custom link normaliser
+  if( !options ) options = {};
+  if( !options.pattern ) options.pattern = {};
+  if( !options.pattern.search ) options.pattern.search = pattern.search;
+  if( !options.pattern.refine ) options.pattern.refine = pattern.refine;
+  if( !options.pattern.filter ) options.pattern.filter = pattern.filter;
+  if( !options.resolver ) options.resolver = module.exports.resolver;
+  if( !options.normaliser ) options.normaliser = module.exports.normaliser;
+  if( &#x27;boolean&#x27; !== typeof options.unique ) options.unique = true;
+
+  // match all patterns and extract links
+  var matches = body.match( options.pattern.search );
+  if( Array.isArray( matches ) ){
+    links = links.concat( matches.filter( String ).map( function( link ){
+      return link.match( options.pattern.refine )[1];
+    }));
+  }
+
+  // resolve links
+  if( options.resolver ){
+    links = links.map( function( link ){
+      return options.resolver( link, uri );
+    });
+  }
+
+  // normalise links
+  if( options.normaliser ){
+    links = links.map( function( link ){
+      return options.normaliser( link );
+    });
+  }
+
+  // filter domains
+  if( options.pattern.filter ){
+    links = links.filter( function( link ){
+      return link.match( options.pattern.filter );
+    });
+  }
+
+  // remove duplicates
+  if( options.unique ){
+    links = links.filter( function( value, index ) {
+      return links.indexOf( value ) === index;
+    });
+  }
+
+  return links;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.link.normaliser" id="apidoc.element.huntsman.link.normaliser">
+        function <span class="apidocSignatureSpan">huntsman.link.</span>normaliser
+        <span class="apidocSignatureSpan">( uri )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normaliser = function ( uri ) {
+  if( ( &#x27;string&#x27; !== typeof uri ) || !uri.length ) throw new Error( &#x27;invalid uri&#x27; );
+  return uri.replace( &#x27;/?&#x27;, &#x27;?&#x27; )
+            .replace( &#x27;/#&#x27;, &#x27;#&#x27; )
+            .replace( /\/$/, &#x27;&#x27; );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return options.resolver( link, uri );
+  });
+}
+
+// normalise links
+if( options.normaliser ){
+  links = links.map( function( link ){
+    return options.<span class="apidocCodeKeywordSpan">normaliser</span>( link );
+  });
+}
+
+// filter domains
+if( options.pattern.filter ){
+  links = links.filter( function( link ){
+    return link.match( options.pattern.filter );
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.link.resolver" id="apidoc.element.huntsman.link.resolver">
+        function <span class="apidocSignatureSpan">huntsman.link.</span>resolver
+        <span class="apidocSignatureSpan">( uri, baseUri )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolver = function ( uri, baseUri ) {
+  if( ( &#x27;string&#x27; !== typeof uri ) || !uri.length ) throw new Error( &#x27;invalid uri&#x27; );
+  return baseUri ? resolve( baseUri, uri ) : uri;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return link.match( options.pattern.refine )[1];
+  }));
+}
+
+// resolve links
+if( options.resolver ){
+  links = links.map( function( link ){
+    return options.<span class="apidocCodeKeywordSpan">resolver</span>( link, uri );
+  });
+}
+
+// normalise links
+if( options.normaliser ){
+  links = links.map( function( link ){
+    return options.normaliser( link );
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
