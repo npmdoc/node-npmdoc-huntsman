@@ -1,45 +1,48 @@
-<svg height="670" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="670" fill="#555" width="720"></rect>
+<svg height="718" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="718" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">└─┬ huntsman@0.3.0 </tspan>
-<tspan x="10" y="42">  ├── async@0.7.0 </tspan>
-<tspan x="10" y="58">  ├─┬ cheerio@0.19.0 </tspan>
-<tspan x="10" y="74">  │ ├─┬ css-select@1.0.0 </tspan>
-<tspan x="10" y="90">  │ │ ├── boolbase@1.0.0 </tspan>
-<tspan x="10" y="106">  │ │ ├── css-what@1.0.0 </tspan>
-<tspan x="10" y="122">  │ │ ├── domutils@1.4.3 </tspan>
-<tspan x="10" y="138">  │ │ └── nth-check@1.0.1 </tspan>
-<tspan x="10" y="154">  │ ├─┬ dom-serializer@0.1.0 </tspan>
-<tspan x="10" y="170">  │ │ └── domelementtype@1.1.3 </tspan>
-<tspan x="10" y="186">  │ ├── entities@1.1.1 </tspan>
-<tspan x="10" y="202">  │ ├─┬ htmlparser2@3.8.3 </tspan>
-<tspan x="10" y="218">  │ │ ├── domelementtype@1.3.0 </tspan>
-<tspan x="10" y="234">  │ │ ├── domhandler@2.3.0 </tspan>
-<tspan x="10" y="250">  │ │ ├── domutils@1.5.1 </tspan>
-<tspan x="10" y="266">  │ │ ├── entities@1.0.0 </tspan>
-<tspan x="10" y="282">  │ │ └── readable-stream@1.1.14 </tspan>
-<tspan x="10" y="298">  │ └── lodash@3.10.1 </tspan>
-<tspan x="10" y="314">  ├── regexemitter@0.2.3 </tspan>
-<tspan x="10" y="330">  ├── semver@3.0.1 </tspan>
-<tspan x="10" y="346">  └─┬ superagent@0.18.0 </tspan>
-<tspan x="10" y="362">    ├── component-emitter@1.1.2 </tspan>
-<tspan x="10" y="378">    ├── cookiejar@1.3.2 </tspan>
-<tspan x="10" y="394">    ├── debug@0.7.4 </tspan>
-<tspan x="10" y="410">    ├── extend@1.2.1 </tspan>
-<tspan x="10" y="426">    ├─┬ form-data@0.1.2 </tspan>
-<tspan x="10" y="442">    │ ├── async@0.2.10 </tspan>
-<tspan x="10" y="458">    │ ├─┬ combined-stream@0.0.7 </tspan>
-<tspan x="10" y="474">    │ │ └── delayed-stream@0.0.5 </tspan>
-<tspan x="10" y="490">    │ └── mime@1.2.11 </tspan>
-<tspan x="10" y="506">    ├── formidable@1.0.14 </tspan>
-<tspan x="10" y="522">    ├── methods@0.0.1 </tspan>
-<tspan x="10" y="538">    ├── mime@1.2.5 </tspan>
-<tspan x="10" y="554">    ├── qs@0.6.6 </tspan>
-<tspan x="10" y="570">    ├─┬ readable-stream@1.0.27-1 </tspan>
-<tspan x="10" y="586">    │ ├── core-util-is@1.0.2 </tspan>
-<tspan x="10" y="602">    │ ├── inherits@2.0.3 </tspan>
-<tspan x="10" y="618">    │ ├── isarray@0.0.1 </tspan>
-<tspan x="10" y="634">    │ └── string_decoder@0.10.31 </tspan>
-<tspan x="10" y="650">    └── reduce-component@1.0.1</tspan>
+<tspan x="10" y="26">6 megabytes installed</tspan>
+<tspan x="10" y="42"></tspan>
+<tspan x="10" y="58">node_modules</tspan>
+<tspan x="10" y="74">└─┬ huntsman@0.3.0 </tspan>
+<tspan x="10" y="90">  ├── async@0.7.0 </tspan>
+<tspan x="10" y="106">  ├─┬ cheerio@0.19.0 </tspan>
+<tspan x="10" y="122">  │ ├─┬ css-select@1.0.0 </tspan>
+<tspan x="10" y="138">  │ │ ├── boolbase@1.0.0 </tspan>
+<tspan x="10" y="154">  │ │ ├── css-what@1.0.0 </tspan>
+<tspan x="10" y="170">  │ │ ├── domutils@1.4.3 </tspan>
+<tspan x="10" y="186">  │ │ └── nth-check@1.0.1 </tspan>
+<tspan x="10" y="202">  │ ├─┬ dom-serializer@0.1.0 </tspan>
+<tspan x="10" y="218">  │ │ └── domelementtype@1.1.3 </tspan>
+<tspan x="10" y="234">  │ ├── entities@1.1.1 </tspan>
+<tspan x="10" y="250">  │ ├─┬ htmlparser2@3.8.3 </tspan>
+<tspan x="10" y="266">  │ │ ├── domelementtype@1.3.0 </tspan>
+<tspan x="10" y="282">  │ │ ├── domhandler@2.3.0 </tspan>
+<tspan x="10" y="298">  │ │ ├── domutils@1.5.1 </tspan>
+<tspan x="10" y="314">  │ │ ├── entities@1.0.0 </tspan>
+<tspan x="10" y="330">  │ │ └── readable-stream@1.1.14 </tspan>
+<tspan x="10" y="346">  │ └── lodash@3.10.1 </tspan>
+<tspan x="10" y="362">  ├── regexemitter@0.2.3 </tspan>
+<tspan x="10" y="378">  ├── semver@3.0.1 </tspan>
+<tspan x="10" y="394">  └─┬ superagent@0.18.0 </tspan>
+<tspan x="10" y="410">    ├── component-emitter@1.1.2 </tspan>
+<tspan x="10" y="426">    ├── cookiejar@1.3.2 </tspan>
+<tspan x="10" y="442">    ├── debug@0.7.4 </tspan>
+<tspan x="10" y="458">    ├── extend@1.2.1 </tspan>
+<tspan x="10" y="474">    ├─┬ form-data@0.1.2 </tspan>
+<tspan x="10" y="490">    │ ├── async@0.2.10 </tspan>
+<tspan x="10" y="506">    │ ├─┬ combined-stream@0.0.7 </tspan>
+<tspan x="10" y="522">    │ │ └── delayed-stream@0.0.5 </tspan>
+<tspan x="10" y="538">    │ └── mime@1.2.11 </tspan>
+<tspan x="10" y="554">    ├── formidable@1.0.14 </tspan>
+<tspan x="10" y="570">    ├── methods@0.0.1 </tspan>
+<tspan x="10" y="586">    ├── mime@1.2.5 </tspan>
+<tspan x="10" y="602">    ├── qs@0.6.6 </tspan>
+<tspan x="10" y="618">    ├─┬ readable-stream@1.0.27-1 </tspan>
+<tspan x="10" y="634">    │ ├── core-util-is@1.0.2 </tspan>
+<tspan x="10" y="650">    │ ├── inherits@2.0.3 </tspan>
+<tspan x="10" y="666">    │ ├── isarray@0.0.1 </tspan>
+<tspan x="10" y="682">    │ └── string_decoder@0.10.31 </tspan>
+<tspan x="10" y="698">    └── reduce-component@1.0.1</tspan>
 </text>
 </svg>
