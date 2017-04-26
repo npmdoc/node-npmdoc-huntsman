@@ -107,6 +107,12 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">huntsman.</span>index</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">huntsman.</span>link</span>
 
         </li>
@@ -177,6 +183,46 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.huntsman.Queue.prototype.shift">
             function <span class="apidocSignatureSpan">huntsman.Queue.prototype.</span>shift
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.huntsman.index">module huntsman.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.index.extension">
+            function <span class="apidocSignatureSpan">huntsman.index.</span>extension
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.index.proxy">
+            function <span class="apidocSignatureSpan">huntsman.index.</span>proxy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.index.spider">
+            function <span class="apidocSignatureSpan">huntsman.index.</span>spider
+            <span class="apidocSignatureSpan">( options )</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.huntsman.index.storage">
+            function <span class="apidocSignatureSpan">huntsman.index.</span>storage
             <span class="apidocSignatureSpan">()</span>
             </a>
 
@@ -416,8 +462,27 @@ spider.extensions = [
   var module = require( './lib/' + mod + '/' + args.shift() );
   return module.apply( module, args );
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/** This example is not quite finished yet. **/
+
+// var path = require('path');
+// var huntsman = require('huntsman');
+// var filename = path.resolve('./cache.json');
+
+// var spider = huntsman.spider({
+//   storage: huntsman.<span class="apidocCodeKeywordSpan">storage</span>( 'filesystem', filename, { writeInterval: 1000
+ } )
+// });
+
+// spider.extensions = [
+//   huntsman.extension( 'recurse' ) // load recurse extension &amp; follow anchor links
+// ];
+
+// // follow pages which match this uri string
+...</pre></li>
     </ul>
+
+
 
 
 
@@ -601,7 +666,23 @@ module.exports = Queue;
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    it 'should remove all when unique', -&gt;
+
+queue = new Queue( true )
+queue.add( 'foo' )
+queue.add( 'foo' )
+queue.count().should.eql 1
+queue.<span class="apidocCodeKeywordSpan">remove</span>( 'foo' )
+queue.count().should.eql 0
+
+    it 'should remove one when not unique', -&gt;
+
+queue = new Queue( false )
+queue.add( 'foo' )
+queue.add( 'foo' )
+...</pre></li>
     </ul>
 
 
@@ -634,6 +715,211 @@ return function(){
 module.exports = {
 spider: require( './lib/huntsman' ),
 proxy: loadModule( 'proxy' ),
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.huntsman.index" id="apidoc.module.huntsman.index">module huntsman.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.index.extension" id="apidoc.element.huntsman.index.extension">
+        function <span class="apidocSignatureSpan">huntsman.index.</span>extension
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extension = function (){
+  var args = Array.prototype.slice.call( arguments, 0 );
+  var module = require( './lib/' + mod + '/' + args.shift() );
+  return module.apply( module, args );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+/** Crawl wikipedia and use jquery syntax to extract information from the page **/
+
+var huntsman = require('huntsman');
+var spider = huntsman.spider();
+
+spider.extensions = [
+huntsman.<span class="apidocCodeKeywordSpan">extension</span>( 'recurse' ), // load recurse extension &amp; follow anchor
+ links
+huntsman.extension( 'cheerio' ) // load cheerio extension
+];
+
+// follow pages which match this uri regex
+spider.on( /http:\/\/en\.wikipedia\.org\/wiki\/\w+:\w+$/, function ( err, res ){
+
+// use jquery-style selectors &amp; functions
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.index.proxy" id="apidoc.element.huntsman.index.proxy">
+        function <span class="apidocSignatureSpan">huntsman.index.</span>proxy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">proxy = function (){
+  var args = Array.prototype.slice.call( arguments, 0 );
+  var module = require( './lib/' + mod + '/' + args.shift() );
+  return module.apply( module, args );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  });
+});
+
+huntsman.next = function( isSeed ){
+  var uri = huntsman.queue.shift();
+  if( 'string' === typeof( uri ) ){
+    if( true === isSeed || huntsman.match( uri ) ){
+      huntsman.<span class="apidocCodeKeywordSpan">proxy</span>( uri, function( err, res ){
+        huntsman.emit( 'HUNTSMAN_RESPONSE', err, res );
+      });
+    }
+    else console.log( '[skip] uri cannot be matched to callback', uri );
+  } else if (( new Date().getTime() - huntsman.options.timeout ) &gt; huntsman.updated ){
+    huntsman.stop();
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.index.spider" id="apidoc.element.huntsman.index.spider">
+        function <span class="apidocSignatureSpan">huntsman.index.</span>spider
+        <span class="apidocSignatureSpan">( options )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spider = function ( options ){
+
+  var huntsman = new EventEmitter();
+
+  // Allow undefined callbacks
+  // @todo add unit test for this
+  huntsman.on = function( event, cb ){
+    EventEmitter.prototype.on.call( this, event, cb || function(){} );
+  }
+
+  huntsman.options = options || {};
+  huntsman.options.throttle = huntsman.options.throttle || 10;
+  huntsman.options.timeout = huntsman.options.timeout || 5000;
+  huntsman.proxy = huntsman.options.proxy || new (require('./proxy/http'))();
+  huntsman.queue = huntsman.options.queue || new (require('./Queue'))();
+  huntsman.extensions = [];
+  huntsman.loop = function(){};
+  huntsman.updated = new Date().getTime() + huntsman.options.timeout;
+
+  // Extensions
+  huntsman.on( 'HUNTSMAN_RESPONSE', function( err, res ){
+    if( err ) huntsman.emit( 'HUNTSMAN_ERROR', 'response error' + err.toString('utf8') );
+    huntsman.updated = new Date().getTime();
+    async.parallel( huntsman.extensions.map( function( extension ){
+      return async.apply( extension, huntsman, err, res );
+    }), function( err, results ){
+      if( err ) huntsman.emit( 'HUNTSMAN_ERROR', 'extension error' + err.toString('utf8') );
+      res.extension = {};
+      if( Array.isArray( results ) ){
+        results.forEach( function( result ){
+          for( var key in result ){ res.extension[ key ] = result[ key ]; }
+        });
+      }
+      huntsman.emit.call( huntsman, res.uri, err, res );
+    });
+  });
+
+  huntsman.next = function( isSeed ){
+    var uri = huntsman.queue.shift();
+    if( 'string' === typeof( uri ) ){
+      if( true === isSeed || huntsman.match( uri ) ){
+        huntsman.proxy( uri, function( err, res ){
+          huntsman.emit( 'HUNTSMAN_RESPONSE', err, res );
+        });
+      }
+      else console.log( '[skip] uri cannot be matched to callback', uri );
+    } else if (( new Date().getTime() - huntsman.options.timeout ) &gt; huntsman.updated ){
+      huntsman.stop();
+    }
+  };
+
+  huntsman.wait = function( waitms ){
+    huntsman.stop();
+    setTimeout( huntsman.start, waitms );
+    console.error( 'waiting: ' + waitms + ' ms' );
+  };
+
+  huntsman.stop = function(){
+    console.error( 'spider stop' );
+    clearInterval( huntsman.loop );
+    huntsman.emit( 'HUNTSMAN_EXIT' );
+  };
+
+  huntsman.start = function(){
+    if( huntsman.queue.count() === 0 ) return console.error( 'no uri in queue' );
+    huntsman.loop = setInterval( huntsman.next, 1000 / huntsman.options.throttle );
+    huntsman.next( true );
+  };
+
+  return huntsman;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Example Script
+
+```javascript
+/** Crawl wikipedia and use jquery syntax to extract information from the page **/
+
+var huntsman = require('huntsman');
+var spider = huntsman.<span class="apidocCodeKeywordSpan">spider</span>();
+
+spider.extensions = [
+  huntsman.extension( 'recurse' ), // load recurse extension &amp; follow anchor links
+  huntsman.extension( 'cheerio' ) // load cheerio extension
+];
+
+// follow pages which match this uri regex
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.huntsman.index.storage" id="apidoc.element.huntsman.index.storage">
+        function <span class="apidocSignatureSpan">huntsman.index.</span>storage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">storage = function (){
+  var args = Array.prototype.slice.call( arguments, 0 );
+  var module = require( './lib/' + mod + '/' + args.shift() );
+  return module.apply( module, args );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/** This example is not quite finished yet. **/
+
+// var path = require('path');
+// var huntsman = require('huntsman');
+// var filename = path.resolve('./cache.json');
+
+// var spider = huntsman.spider({
+//   storage: huntsman.<span class="apidocCodeKeywordSpan">storage</span>( 'filesystem', filename, { writeInterval: 1000
+ } )
+// });
+
+// spider.extensions = [
+//   huntsman.extension( 'recurse' ) // load recurse extension &amp; follow anchor links
+// ];
+
+// // follow pages which match this uri string
 ...</pre></li>
     </ul>
 
@@ -703,7 +989,23 @@ proxy: loadModule( 'proxy' ),
 
   return links;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+var link = require( '../link' );
+
+module.exports = function( options ){
+return function( huntsman, err, res, cb ){
+  if( !err &amp;&amp; 'string' === typeof( res.body ) ){
+    var links = link.<span class="apidocCodeKeywordSpan">extractor</span>( res.uri, res.body, options );
+    if( Array.isArray( links ) ){
+      links.forEach( function( link ){
+        if( huntsman.match( link ) ){
+          huntsman.queue.add( link );
+        }
+      });
+    }
+...</pre></li>
     </ul>
 
 
