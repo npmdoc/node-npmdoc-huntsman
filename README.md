@@ -1,6 +1,6 @@
 # npmdoc-huntsman
 
-#### api documentation for  [huntsman (v0.3.0)](https://github.com/missinglink/huntsman#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-huntsman.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-huntsman) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-huntsman.svg)](https://travis-ci.org/npmdoc/node-npmdoc-huntsman)
+#### basic api documentation for  [huntsman (v0.3.0)](https://github.com/missinglink/huntsman#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-huntsman.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-huntsman) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-huntsman.svg)](https://travis-ci.org/npmdoc/node-npmdoc-huntsman)
 
 #### Super configurable async web spider
 
@@ -84,7 +84,8 @@
     "scripts": {
         "test": "node node_modules/mocha/bin/mocha --recursive --reporter spec --compilers coffee:coffee-script/register test"
     },
-    "version": "0.3.0"
+    "version": "0.3.0",
+    "bin": {}
 }
 ```
 
